@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// models/Ability.prisma
+
+model modelo {
+  id                Int       @id @default(autoincrement())
+  abilities         String    // Talvez seja melhor dividir em várias colunas, dependendo do uso
+  against_bug       Float?
+  against_dark      Float?
+  against_dragon    Float?
+  against_electric  Float?
+  against_fairy     Float?
+  against_fight     Float?
+  against_fire      Float?
+  against_flying    Float?
+  against_ghost     Float?
+  against_grass     Float?
+  against_ground    Float?
+  against_ice       Float?
+  against_normal    Float?
+  against_poison    Float?
+  against_psychic   Float?
+  against_rock      Float?
+  against_steel     Float?
+  against_water     Float?
+  attack            Int?
+  base_egg_steps    Int?
+  base_happiness    Int?
+  base_total        Int?
+  capture_rate      Int?
+  classfication    String?
+  defense           Int?
+  experience_growth Int?
+  height_m          Float?
+  hp                Int?
+  japanese_name     String?
+  name              String
+  percentage_male   Float?
+  pokedex_number    Int?
+  sp_attack         Int?
+  sp_defense        Int?
+  speed             Int?
+  type1             String?
+  type2             String?
+  weight_kg         Float?
+  generation        Int?
+  is_legendary      Int?
+}
